@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "29657697020",
+    "project_id": "ridecircle-80169",
+    "storage_bucket": "ridecircle-80169.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:29657697020:android:effc02bf45c5631a406579",
+        "android_client_info": {
+          "package_name": "com.example.myapplication"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDTyITUk6gMadHVkt0QZu_x6RqCVi98Buk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

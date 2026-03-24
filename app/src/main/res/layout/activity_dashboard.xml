@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:map="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/drawerLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- ================= MAIN SCREEN ================= -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!-- Google Map -->
+        <fragment
+            android:id="@+id/map"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+        <!-- Menu Button -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_margin="16dp"
+            app:cardCornerRadius="28dp"
+            app:cardElevation="6dp"
+            app:cardBackgroundColor="@android:color/white">
+
+            <ImageView
+                android:id="@+id/menuBtn"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="12dp"
+                android:src="@android:drawable/ic_menu_sort_by_size"
+                android:tint="#000000"
+                android:scaleType="centerInside"
+                android:background="?attr/selectableItemBackgroundBorderless"/>
+
+        </androidx.cardview.widget.CardView>
+
+
+        <!-- Location Button -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentEnd="true"
+            android:layout_margin="16dp"
+            app:cardCornerRadius="25dp"
+            app:cardElevation="6dp"
+            app:cardBackgroundColor="@android:color/white">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/btnLocation"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="12dp"
+                    android:src="@android:drawable/ic_menu_mylocation"
+                    android:scaleType="centerInside" />
+
+                <!-- Red dot overlay -->
+                <View
+                    android:layout_width="8dp"
+                    android:layout_height="8dp"
+                    android:layout_gravity="bottom|end"
+                    android:layout_margin="21dp"
+                    android:background="@drawable/red_dot"
+                    android:elevation="2dp" />
+
+            </FrameLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <!-- Bottom Card -->
+        <LinearLayout
+            android:id="@+id/bottomCard"
+            android:layout_width="match_parent"
+            android:layout_height="350dp"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/dashboard_bg"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <!-- Offer Ride Button -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnOfferRide"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:text="🚗 Offer Ride"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                android:textAllCaps="false"
+                android:gravity="center_vertical|start"
+                android:paddingStart="20dp"
+                android:backgroundTint="#F5F5F5"
+                app:strokeColor="#4CAF50"
+                app:strokeWidth="2dp"
+                app:cornerRadius="30dp"/>
+
+            <!-- Find Ride Button -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnFindRide"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:text="🧍 Find Ride"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                android:layout_marginTop="12dp"
+                android:textAllCaps="false"
+                android:gravity="center_vertical|start"
+                android:paddingStart="20dp"
+                android:backgroundTint="#F5F5F5"
+                app:strokeColor="#4CAF50"
+                app:strokeWidth="2dp"
+                app:cornerRadius="30dp"/>
+
+            <!-- Title -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Available Services:"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                android:layout_marginTop="16dp"/>
+
+            <!-- Services Row -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp"
+                android:weightSum="3">
+
+                <!-- Outstation -->
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.99
+"
+                    android:layout_marginEnd="8dp"
+                    android:elevation="4dp"
+                    app:cardCornerRadius="20dp"
+                    app:cardBackgroundColor="#80F2E8E8"
+                    app:cardUseCompatPadding="true">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+
+                        <!-- ICON -->
+
+                        <!-- TEXT -->
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="sans-serif-medium"
+                            android:text="🚗"
+                            android:textColor="#8B4513"
+                            android:textSize="28sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:fontFamily="sans-serif-medium"
+                            android:text="Outstation"
+                            android:textColor="#8B4513"
+                            android:textSize="12sp" />
+
+                    </LinearLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- Bike -->
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.99"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginEnd="4dp"
+                    android:elevation="4dp"
+                    app:cardCornerRadius="20dp"
+                    app:cardBackgroundColor="#80F2E8E8"
+                    app:cardUseCompatPadding="true">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        android:padding="16dp">
+
+                        <!-- ICON -->
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="🏍️"
+                            android:textSize="28sp"
+                            android:textColor="#8B4513"
+                            android:fontFamily="sans-serif-medium"/>
+
+                        <!-- TEXT -->
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Bike"
+                            android:textSize="14sp"
+                            android:textColor="#8B4513"
+                            android:layout_marginTop="4dp"
+                            android:fontFamily="sans-serif-medium"/>
+
+                    </LinearLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- Rentals -->
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.99"
+                    android:layout_marginStart="8dp"
+                    android:elevation="4dp"
+                    app:cardCornerRadius="20dp"
+                    app:cardBackgroundColor="#80F2E8E8"
+                    app:cardUseCompatPadding="true">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        android:padding="16dp">
+
+                        <!-- ICON -->
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="🚗"
+                            android:textSize="28sp"
+                            android:textColor="#8B4513"
+                            android:fontFamily="sans-serif-medium"/>
+
+                        <!-- TEXT -->
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Rentals"
+                            android:textSize="14sp"
+                            android:textColor="#8B4513"
+                            android:layout_marginTop="4dp"
+                            android:fontFamily="sans-serif-medium"/>
+
+                    </LinearLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <!-- ================= DRAWER MENU ================= -->
+    <LinearLayout
+        android:id="@+id/drawerMenu"
+        android:layout_width="280dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:orientation="vertical"
+        android:background="#FFFFFF"
+        android:padding="2dp">
+
+        <ImageView
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="20dp"
+
+            android:src="@android:drawable/ic_menu_myplaces"/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="My Profile"
+            android:textSize="18sp"
+            android:padding="20dp"
+            android:layout_marginTop="1dp"/>
+
+        <!-- History Menu Item -->
+        <TextView
+            android:id="@+id/menuHistory"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="History"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:padding="16dp"
+            android:drawableStart="@android:drawable/ic_menu_recent_history"
+            android:drawablePadding="10dp"
+
+            android:layout_marginTop="30dp"/>
+
+        <!-- Payment Menu Item -->
+        <TextView
+            android:id="@+id/menuPayment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Payment"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:padding="16dp"
+            android:drawableStart="@android:drawable/ic_menu_agenda"
+            android:drawablePadding="10dp"/>
+
+        <!-- Support Menu Item -->
+        <TextView
+            android:id="@+id/menuSupport"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Support"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:padding="16dp"
+            android:drawableStart="@android:drawable/ic_menu_help"
+            android:drawablePadding="10dp"/>
+
+        <!-- About Menu Item -->
+        <TextView
+            android:id="@+id/menuAbout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="About"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:padding="16dp"
+            android:drawableStart="@android:drawable/ic_menu_info_details"
+            android:drawablePadding="10dp"/>
+
+        <!-- Logout Menu Item -->
+        <TextView
+            android:id="@+id/menuLogout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Logout"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:padding="16dp"
+            android:drawableStart="@android:drawable/ic_lock_power_off"
+            android:drawablePadding="10dp"/>
+
+    </LinearLayout>
+
+
+</androidx.drawerlayout.widget.DrawerLayout>
